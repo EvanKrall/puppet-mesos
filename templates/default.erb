@@ -1,7 +1,7 @@
 # /etc/default/mesos
 
 libjvms=( /usr/lib/jvm/java-*/jre/lib/*/server/libjvm.so )
-export LD_LIBRARY_PATH="${libjvms[0]}"
+export LD_LIBRARY_PATH="${libjvms[0]%%libjvm.so}"
 
 LOGS="<%= @log_dir %>"
 ULIMIT="-n <%= @ulimit %>"
